@@ -60,20 +60,20 @@ calcBtn.addEventListener("click", () => {
 });
 
 const swiper = new Swiper(".swiper", {
-  // Optional parameters
   direction: "horizontal",
-  // Navigation arrows
+  loop: true,
+  initialSlide: 0, //this one accept a number according to docs
+  slidesPerView: 3, //number or 'auto'
+  slidesPerColumn: 2, //number
   navigation: {
     nextEl: ".swiper-navigation__right",
     prevEl: ".swiper-navigation__left",
   },
   effect: "coverflow",
-  slidesPerView: 3,
   centeredSlide: true,
   coverflowEffect: {
     rotate: 0,
-    slideShadows: true,
-    modifier: 3,
+    modifier: 1,
   },
 });
 

@@ -38,22 +38,22 @@
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" checked />
               <div class="calc-form__checkbox"></div>
-              Базовый
+              <div class="calc-form__label-heading">Базовый</div>
             </label>
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" />
               <div class="calc-form__checkbox"></div>
-              увеличенный размер
+              <div class="calc-form__label-heading">увеличенный размер</div>
             </label>
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" />
               <div class="calc-form__checkbox"></div>
-              Проектирование
+              <div class="calc-form__label-heading">Проектирование</div>
             </label>
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" />
               <div class="calc-form__checkbox"></div>
-              индивидуальный дизайн
+              <div class="calc-form__label-heading">индивидуальный дизайн</div>
             </label>
           </div>
         </fieldset>
@@ -63,6 +63,32 @@
             <span class="range__min-value">1 М.</span>
             <input class="range__input" type="range" min="1" max="10" step="1" value="0" />
             <span class="range__max-value">10 М.</span>
+            <div class="range__mobile-range mobile-range">
+              <button type="button" class="range__mobile-minus-btn mobile-range__minus-btn">
+                <svg
+                  width="39"
+                  height="4"
+                  viewBox="0 0 39 4"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 2H37" stroke="white" stroke-width="4" stroke-linecap="round" />
+                </svg>
+              </button>
+              <div class="range__value mobile-range__value">
+                <span class="mobile-range__value--green">1</span>м
+              </div>
+              <button type="button" class="range__mobile-plus-btn mobile-range__plus-btn">
+                <svg
+                  width="39"
+                  height="39"
+                  viewBox="0 0 39 39"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 19H37" stroke="white" stroke-width="4" stroke-linecap="round" />
+                  <path d="M20 37L20 2" stroke="white" stroke-width="4" stroke-linecap="round" />
+                </svg>
+              </button>
+            </div>
           </div>
         </fieldset>
         <fieldset class="calc-form__fieldset">
@@ -71,32 +97,32 @@
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" checked />
               <div class="calc-form__checkbox"></div>
-              Базовый
+              <div class="calc-form__label-heading">Базовый</div>
             </label>
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" />
               <div class="calc-form__checkbox"></div>
-              Распределение веществ
+              <div class="calc-form__label-heading">Распределение веществ</div>
             </label>
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" />
               <div class="calc-form__checkbox"></div>
-              питание
+              <div class="calc-form__label-heading">питание</div>
             </label>
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" />
               <div class="calc-form__checkbox"></div>
-              влажность субстрата
+              <div class="calc-form__label-heading">влажность субстрата</div>
             </label>
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" />
               <div class="calc-form__checkbox"></div>
-              датчик Со2
+              <div class="calc-form__label-heading">датчик Со2</div>
             </label>
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" />
               <div class="calc-form__checkbox"></div>
-              Видео наблюдение
+              <div class="calc-form__label-heading">Видео наблюдение</div>
             </label>
           </div>
         </fieldset>
@@ -106,6 +132,7 @@
             <label class="calc-form__label">
               <input type="checkbox" class="calc-form__checkbox-input" />
               <div class="calc-form__checkbox"></div>
+              <div class="calc-form__label-heading">Добавить</div>
             </label>
           </div>
         </fieldset>
@@ -241,7 +268,7 @@
         </div>
       </section>
       <section class="section">
-        <div class="section__wrapper wrapper">
+        <div class="section__wrapper section__wrapper--reverse wrapper">
           <div class="section__image-holder image-holder">
             <img
               src="../assets/img/pics/effective-img.png"

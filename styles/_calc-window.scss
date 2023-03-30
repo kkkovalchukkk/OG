@@ -3,9 +3,12 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  overflow-y: scroll;
+  overflow-x: hidden;
   @media (max-width: 1440px) {
     padding: 30px;
+  }
+  @media (max-width: 960px) {
+    overflow-y: scroll;
   }
   &.hidden {
     transform: translateX(-100%);
@@ -214,4 +217,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 input[type="range"]::-webkit-slider-thumb:active {
   transform: scale(1.2);
+}
+
+.mobile-range {
+  display: none;
 }
