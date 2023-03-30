@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body class="preload">
+    <div class="window menu-window hidden">
+      <button class="menu-window__close-btn close-btn"></button>
+      <div class="menu-window__logo logo">
+        <img
+          src="../assets/img/pics/logo.svg"
+          alt="Optimum Green"
+          class="menu-window__logo-image logo__logo-image" />
+        <div class="menu-window__company-name logo__company-name company-name">
+          Optimum <span class="company-name--green">Green</span>
+        </div>
+      </div>
+      <nav class="menu-window__nav menu-window-nav">
+        <a href="#" class="menu-window__nav-link menu-window-nav__link">продукты</a>
+        <a href="#" class="menu-window__nav-link menu-window-nav__link">Технология</a>
+        <a href="#" class="menu-window__nav-link menu-window-nav__link">о компании</a>
+        <a href="#" class="menu-window__nav-link menu-window-nav__link">новости</a>
+        <a href="#" class="menu-window__nav-link menu-window-nav__link">контакты</a>
+      </nav>
+      <a href="#" class="menu-window__tg-link tg-link-icon"></a>
+    </div>
+    <div class="window calc-window hidden">
+      <button class="calc-window__close-btn close-btn"></button>
+      <h2 class="calc-window__heading">Калькулятор</h2>
+      <form class="calc-window__form calc-form">
+        <fieldset class="calc-form__fieldset">
+          <h4 class="calc-form__fieldset-heading">Корпус</h4>
+          <div class="calc-form__labels-group">
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" checked />
+              <div class="calc-form__checkbox"></div>
+              Базовый
+            </label>
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" />
+              <div class="calc-form__checkbox"></div>
+              увеличенный размер
+            </label>
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" />
+              <div class="calc-form__checkbox"></div>
+              Проектирование
+            </label>
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" />
+              <div class="calc-form__checkbox"></div>
+              индивидуальный дизайн
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="calc-form__fieldset">
+          <h4 class="calc-form__fieldset-heading">Размер (ширина)</h4>
+          <div class="calc-form__range range">
+            <span class="range__min-value">1 М.</span>
+            <input class="range__input" type="range" min="1" max="10" step="1" value="0" />
+            <span class="range__max-value">10 М.</span>
+          </div>
+        </fieldset>
+        <fieldset class="calc-form__fieldset">
+          <h4 class="calc-form__fieldset-heading">Системы</h4>
+          <div class="calc-form__labels-group">
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" checked />
+              <div class="calc-form__checkbox"></div>
+              Базовый
+            </label>
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" />
+              <div class="calc-form__checkbox"></div>
+              Распределение веществ
+            </label>
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" />
+              <div class="calc-form__checkbox"></div>
+              питание
+            </label>
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" />
+              <div class="calc-form__checkbox"></div>
+              влажность субстрата
+            </label>
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" />
+              <div class="calc-form__checkbox"></div>
+              датчик Со2
+            </label>
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" />
+              <div class="calc-form__checkbox"></div>
+              Видео наблюдение
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="calc-form__fieldset">
+          <h4 class="calc-form__fieldset-heading">ПО</h4>
+          <div class="calc-form__labels-group">
+            <label class="calc-form__label">
+              <input type="checkbox" class="calc-form__checkbox-input" />
+              <div class="calc-form__checkbox"></div>
+            </label>
+          </div>
+        </fieldset>
+      </form>
+      <div class="calc-window__price price">
+        <span class="price__label">итоговая цена:</span>
+        <span class="price__value">1 000 000 000 руб.</span>
+      </div>
+    </div>
+    <header class="header">
+      <div class="wrapper header__wrapper">
+        <a href="/" class="header__logo-link logo-link"
+          >Optimum <span class="logo-link--green">Green</span>
+        </a>
+        <nav class="header__nav nav">
+          <a href="#" class="header__nav-link nav__link">ПРОДУКТЫ</a>
+          <a href="#" class="header__nav-link nav__link">ТЕХНОЛОГИЯ</a>
+          <a href="#" class="header__nav-link nav__link">О КОМПАНИИ</a>
+          <a href="#" class="header__nav-link nav__link">НОВОСТИ</a>
+          <a href="#" class="header__nav-link nav__link">КОНТАКТЫ</a>
+        </nav>
+        <div class="header__menu">
+          <a href="#" class="header__tg-link tg-link-icon"></a>
+          <button class="header__burger-btn burger-btn"></button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section">
+        <div class="section__wrapper wrapper">
+          <div class="section__main-content main-content">
+            <h2 class="section__heading subheading">Эффективность</h2>
+            <p class="section__text text">
+              Корневое питание растений - это источник строительного материала для будущего урожая.
+              Изменяя состав питательных растворов по веществам минеральной природы мы добивались
+              оптимизации цикла роста по массовым показателям достижения стадий жизни, по
+              органическим веществам - увеличения продовольственных свойств растительной продукции.
+              Комплексный подход позволяют объединить эти два эффекта.
+            </p>
+          </div>
+          <div class="section__image-holder image-holder">
+            <img
+              src="../assets/img/pics/effective-img2.png"
+              alt="Эффективность"
+              class="section__image image-holder__image" />
+          </div>
+        </div>
+      </section>
+      <section class="params">
+        <div class="params__wrapper wrapper">
+          <h2 class="params__heading subheading">Регулируемые параметры</h2>
+          <div class="params__params-list params-list">
+            <div class="params__params-item params-list__params-item params-item">
+              <div class="params-item__icon">
+                <div class="temp-icon"></div>
+              </div>
+              <h3 class="params-item__heading">Температура</h3>
+              <p class="params-item__text">Температура среды и субстрата</p>
+            </div>
+            <div class="params__params-item params-list__params-item params-item">
+              <div class="params-item__icon">
+                <div class="nutrition-icon"></div>
+              </div>
+              <h3 class="params-item__heading">Питание</h3>
+              <p class="params-item__text">
+                Регулировка концентрации питательных веществ в системе питания
+              </p>
+            </div>
+            <div class="params__params-item params-list__params-item params-item">
+              <div class="params-item__icon">
+                <div class="lapm-icon"></div>
+              </div>
+              <h3 class="params-item__heading">Свет</h3>
+              <p class="params-item__text">Интенсивность, направленность, фотопериодичность</p>
+            </div>
+            <div class="params__params-item params-list__params-item params-item">
+              <div class="params-item__icon">
+                <div class="water-icon"></div>
+              </div>
+              <h3 class="params-item__heading">Влажность</h3>
+              <p class="params-item__text">Влажность среды и субстрата</p>
+            </div>
+            <div class="params__params-item params-list__params-item params-item">
+              <div class="params-item__icon">
+                <div class="co2-icon"></div>
+              </div>
+              <h3 class="params-item__heading">Концентрация СО2</h3>
+              <p class="params-item__text">Концентрация СО2</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section__wrapper wrapper">
+          <div class="section__image-holder image-holder">
+            <img
+              src="../assets/img/pics/effective-img2.png"
+              alt="Эффективность"
+              class="section__image image-holder__image" />
+          </div>
+          <div class="section__main-content main-content main-content--reverse">
+            <h2 class="section__heading subheading">Эффективность</h2>
+            <p class="section__text text">
+              Свет для зеленых организмов - это источник энергии и тумблер ростовых процессов. Меняя
+              соотношение спектров света и времени освещения, растение можно "убедить" в том, что
+              два дня роста умещаются в одно, а также максимально задействовать свой природный
+              потенциал.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section__wrapper wrapper">
+          <div class="section__main-content main-content">
+            <h2 class="section__heading subheading">Инновации</h2>
+            <p class="section__text text">В ряд технологических решений включены:</p>
+            <ul class="section__bulleted-list bulleted-list">
+              <li class="section__bulleted-item bulleted-list__item">
+                фитофотонные лампы, активизирующие процессы растений, "играя" на их биоритмах;
+              </li>
+              <li class="section__bulleted-item bulleted-list__item">
+                локальная циркуляционная фертигационная система, обеспечивающая растения питанием в
+                оптимальных пропорциях и таймингах.
+              </li>
+            </ul>
+          </div>
+          <div class="section__image-holder image-holder">
+            <img
+              src="../assets/img/pics/effective-img.png"
+              alt="Эффективность"
+              class="section__image image-holder__image" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section__wrapper wrapper">
+          <div class="section__image-holder image-holder">
+            <img
+              src="../assets/img/pics/effective-img.png"
+              alt="Эффективность"
+              class="section__image image-holder__image" />
+          </div>
+          <div class="section__main-content main-content main-content--reverse">
+            <p class="section__text text">
+              Клиентам, для которых "размер имеет значение", мы предлагаем промышленные решения:
+              вертикальные линии выращивания, обеспечивающие увеличение числа выращиваемых растений
+              в ярусе на 70%; пространственно-адаптивные конструкции, максимально эффективно
+              использующие доступное пространство.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__wrapper wrapper">
+        <div class="footer__col col">
+          <a href="#" class="footer__logo-link logo-link">
+            Optimum <span class="logo-link--green">Green</span>
+          </a>
+          <p class="footer__copyrights-text">© 2023. Все права защищены.</p>
+          <a href="#" class="footer__policy-link">Политика конфиденциальности</a>
+        </div>
+        <div class="footer__sponsors sponsors">
+          <a href="#" class="footer__sponsors-item-link sponsors__item-link sponsors-item-link">
+            <img
+              src="../assets/img/pics/sponsor1.png"
+              alt="Фонд содействия инноваций"
+              class="sponsors-item-link__image" />
+          </a>
+          <a href="#" class="footer__sponsors-item-link sponsors__item-link sponsors-item-link">
+            <img
+              src="../assets/img/pics/sponsor2.png"
+              alt="ТГПУ"
+              class="sponsors-item-link__image" />
+          </a>
+          <a href="#" class="footer__sponsors-item-link sponsors__item-link sponsors-item-link">
+            <img
+              src="../assets/img/pics/sponsor2.png"
+              alt="MyBuisnes"
+              class="sponsors-item-link__image" />
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="../scripts/jq.js"></script>
+    <script type="module" src="../scripts/index.js"></script>
+  </body>
+</html>

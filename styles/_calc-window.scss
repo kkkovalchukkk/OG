@@ -1,0 +1,217 @@
+.calc-window {
+  padding: 60px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  overflow-y: scroll;
+  @media (max-width: 1440px) {
+    padding: 30px;
+  }
+  &.hidden {
+    transform: translateX(-100%);
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 70px;
+    right: 70px;
+  }
+
+  &__heading {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  &__form {
+    gap: 40px;
+  }
+
+  &__price {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+  }
+}
+.price {
+  &__label {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $white;
+    margin-right: 1rem;
+  }
+
+  &__value {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    color: $green;
+  }
+}
+
+.calc-form {
+  width: 100%;
+  // display: flex;
+  // align-items: flex-start;
+  // justify-content: space-between;
+  // flex-wrap: wrap;
+  display: grid;
+  column-gap: 0.3125rem;
+  grid-template-columns: repeat(auto-fit, minmax(432px, 1fr));
+  row-gap: 2.5rem;
+  @media (min-width: 1441px) {
+    column-gap: 0rem;
+  }
+  @media (max-width: 1440px) {
+    grid-template-columns: repeat(auto-fit, minmax(286px, 1fr));
+  }
+  &__fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  &__fieldset-heading {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: $white;
+  }
+
+  &__labels-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    @include click();
+
+    color: $white;
+    @media (max-width: 1440px) {
+      max-width: 250px;
+      line-height: 1.2;
+    }
+  }
+
+  &__checkbox-input {
+    display: none;
+    &:checked + .calc-form__checkbox::after {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: $white;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.75);
+    position: relative;
+    &::after {
+      content: "";
+      width: 30px;
+      height: 30px;
+      top: -10px;
+      right: -5px;
+      position: absolute;
+      background-image: url(../assets/img/icons/clicked.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.13s;
+    }
+  }
+
+  &__range {
+  }
+}
+.range {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  &__min-value,
+  &__max-value {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: right;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: $white;
+  }
+
+  &__input {
+  }
+
+  &__max-value {
+  }
+}
+
+input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  width: 100%;
+  max-width: 17.5rem;
+  height: 1.25rem;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: 0;
+  background: #696565;
+  box-shadow: inset -1.21739px 1.21739px 3.04348px rgba(0, 0, 0, 0.75);
+  border-radius: 14px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+​ input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: white;
+  border: 2px solid #e74c3c;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+}

@@ -6,6 +6,1171 @@
 
 @import "./fonts";
 
-* {
-  box-sizing: border-box;
+// Swiper
+
+@import "./swiper";
+
+// Sizes
+
+$header-height: 100px;
+
+// Padding sizes
+
+$paddingDesktop: 40px;
+$paddingTablet: 25px;
+$paddingMobile: 15px;
+
+// Colors
+
+$white: #fff;
+$green: #6fc152;
+$black: #000;
+
+@mixin click {
+  cursor: pointer;
+  transition: transform 0.13s;
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+@mixin dash {
+  position: relative;
+  &:hover {
+    &::after {
+      max-width: 100%;
+    }
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    max-width: 0%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    background-color: $white;
+    transition: max-width 0.13s;
+    z-index: 9999;
+  }
+}
+
+@mixin icon {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.preload {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+.window {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: $black;
+  background-image: url(../assets/img/bg/menu-window-bg.png);
+  background-size: 100%;
+  background-position: center;
+  z-index: 99999999;
+  transition: transform 0.5s;
+}
+
+// Menu Window
+
+@import "./menu-window";
+
+// Calc Window
+
+@import "./calc-window";
+
+.logo {
+  display: flex;
+  align-items: end;
+  gap: 20px;
+  &__logo-image {
+    width: 100%;
+    max-width: 120px;
+  }
+
+  &__company-name {
+  }
+}
+.company-name {
+  font-family: "Great Vibes";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  color: $white;
+}
+.company-name--green {
+  color: $green;
+}
+.menu-window-nav {
+  height: 100%;
+  max-height: 276px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  &__link {
+    font-family: "Tenor Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $white;
+    @include dash();
+  }
+}
+
+.close-btn {
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../assets/img/sprites/close-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  @include click();
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0px $paddingDesktop;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../assets/img/bg/main-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  width: 100%;
+  height: $header-height;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  z-index: 99999;
+  &__wrapper {
+    justify-content: space-between;
+    min-height: 0;
+  }
+  &__logo-link {
+  }
+
+  &__nav {
+  }
+
+  &__nav-link {
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__tg-link {
+  }
+
+  &__burger-btn {
+  }
+}
+
+.logo-link {
+  font-family: "Great Vibes";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: $white;
+}
+.logo-link--green {
+  color: $green;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  &__link {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    color: $white;
+    @include dash();
+  }
+}
+.tg-link-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../assets/img/icons/tg-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  @include click();
+}
+.burger-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url(../assets/img//sprites/burger-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  @include click();
+}
+
+// Blured Section
+
+@import "./blured-section";
+
+// Effectie Section
+
+.effective {
+  &__mobile-img {
+    display: none;
+  }
+  &__wrapper {
+    justify-content: space-between;
+  }
+  &__main-content {
+    max-width: 1066px;
+    min-height: 70vh;
+  }
+
+  &__heading {
+  }
+
+  &__text {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__btn {
+  }
+
+  &__image-holder {
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 449px;
+    max-width: 400px;
+  }
+}
+.wrapper {
+}
+.main-content {
+  width: fit-content;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.subheading {
+  font-family: "Tenor Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $white;
+}
+.text {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  color: $white;
+}
+
+.text-content {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.bulleted-list {
+  padding-left: 70px;
+  list-style-type: disc;
+  &__item {
+    display: list-item;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    color: $white;
+  }
+}
+.btn {
+  padding: 1.25rem 2rem;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: $white;
+  border: 4px solid $green;
+  border-radius: 60px;
+  @include click();
+  transition: 0.13s;
+  cursor: pointer;
+  &:hover {
+    background-color: $green;
+  }
+}
+.image-holder {
+  width: fit-content;
+  &__image {
+    width: 100%;
+  }
+}
+
+.inn {
+  &__wrapper {
+    justify-content: space-between;
+  }
+  &__mobile-links {
+    display: none;
+  }
+  &__mobile-text {
+    display: none;
+  }
+
+  &__image-holder {
+    height: 100vh;
+    justify-content: space-around;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 21.875rem;
+    max-height: 400px;
+  }
+
+  &__media-links {
+  }
+
+  &__media-link {
+  }
+
+  &__main-content {
+    max-width: 1010px;
+    align-items: flex-end;
+  }
+
+  &__heading {
+  }
+
+  &__text {
+    text-align: right;
+  }
+
+  &__btn {
+  }
+}
+.wrapper {
+}
+.image-holder {
+  &__image {
+  }
+}
+.media-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  &__media-link {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+.google-play-img {
+  width: 100%;
+  max-width: 9rem;
+}
+.app-store-img {
+  width: 100%;
+  max-width: 9rem;
+}
+
+.params {
+  width: 100%;
+  padding: 100px 0px;
+  background-color: $black;
+  background-image: url(../assets/img/bg/params-bg.png);
+  &__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+
+  &__heading {
+  }
+
+  &__params-list {
+  }
+
+  &__params-item {
+  }
+}
+
+.params-list {
+  width: 100%;
+  display: flex;
+  row-gap: 20px;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  &__params-item {
+  }
+}
+.params-item {
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  &__icon {
+    width: 100%;
+    max-width: 120px;
+    height: 120px;
+    background-image: url(../assets/img/icons/radial-gradient.png);
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__heading {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: $white;
+  }
+
+  &__text {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: $white;
+  }
+}
+.temp-icon {
+  @include icon();
+  background-image: url(../assets/img/icons/temp-icon.svg);
+}
+.nutrition-icon {
+  @include icon();
+
+  background-image: url(../assets/img/icons/nutrition-icon.svg);
+}
+.lapm-icon {
+  @include icon();
+  background-image: url(../assets/img/icons/lamp-icon.svg);
+}
+.water-icon {
+  @include icon();
+  background-image: url(../assets/img/icons/water-icon.svg);
+}
+.co2-icon {
+  @include icon();
+  background-image: url(../assets/img/icons/co2-icon.svg);
+}
+
+.design {
+  &__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+
+  &__heading {
+    text-align: left;
+  }
+
+  &__content {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__main-content {
+    min-height: 0;
+    height: min-content;
+    gap: 20px;
+    max-width: 790px;
+  }
+
+  &__text {
+  }
+
+  &__btn {
+  }
+  &__swiper {
+    width: 100%;
+    height: min-content;
+    max-width: 983px;
+    margin: 0;
+  }
+  &__swiper-image {
+    width: 300px;
+    height: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.swiper {
+  height: 100%;
+}
+
+.swiper-navigation {
+  position: absolute;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 75%;
+  gap: 83px;
+  z-index: 999;
+  &__left {
+    width: 24px;
+    height: 40px;
+    background-image: url(../assets/img/sprites/left.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    @include click();
+  }
+
+  &__right {
+    width: 24px;
+    height: 40px;
+    background-image: url(../assets/img/sprites/right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    @include click();
+  }
+}
+
+.human {
+  &__wrapper {
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-evenly;
+  }
+
+  &__heading {
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__main-content {
+    max-width: 690px;
+    min-height: 0;
+    align-items: flex-end;
+    text-align: right;
+    gap: 20px;
+  }
+
+  &__text {
+  }
+
+  &__btn {
+  }
+
+  &__swiper {
+    width: 100%;
+    height: min-content;
+    max-width: 983px;
+    margin: 0;
+  }
+  &__swiper-image {
+    width: 300px;
+    height: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 47px 0px 35px 0px;
+  background-color: $black;
+  background-image: url(../assets/img/bg/footer-bg.png);
+  background-size: cover;
+  background-position: center;
+  &__wrapper {
+    min-height: 0;
+    position: relative;
+  }
+
+  &__col {
+  }
+
+  &__logo-link {
+  }
+
+  &__copyrights-text {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    color: $white;
+  }
+
+  &__policy-link {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-decoration-line: underline;
+    color: $white;
+    @include click();
+  }
+
+  &__sponsors {
+  }
+
+  &__sponsors-item-link {
+  }
+}
+.wrapper {
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.logo-link {
+}
+.logo-link--grenn {
+}
+.sponsors {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  &__item-link {
+    @include click();
+  }
+}
+.sponsors-item-link {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  overflow: hidden;
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.main-content--reverse {
+  align-items: flex-end;
+  text-align: right;
+}
+.section {
+  &__wrapper {
+    justify-content: space-between;
+  }
+
+  &__main-content {
+    max-width: 1100px;
+    height: 100%;
+    justify-content: space-evenly;
+  }
+
+  &__heading {
+  }
+
+  &__text {
+  }
+
+  &__image-holder {
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+// Adaptive
+
+@media (max-height: 768px) {
+  .calc-window {
+    &__price {
+      right: 60px;
+      left: auto;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .close-btn {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  .logo {
+    &__logo-image {
+      max-width: 90px;
+    }
+  }
+  .company-name {
+    font-size: 3rem;
+  }
+  .menu-window-nav {
+    max-height: 220px;
+    &__link {
+      font-size: 1.5rem;
+    }
+  }
+  .wrapper {
+    padding: 0px 25px;
+  }
+
+  .logo-link {
+    font-size: 2.25rem;
+  }
+  .nav {
+    &__link {
+      font-size: 1rem;
+    }
+  }
+  .slogan-words__word {
+    font-size: 2rem;
+  }
+  .subheading {
+    font-size: 2.25rem;
+  }
+  .text {
+    font-size: 1.5rem;
+  }
+  .bulleted-list {
+    &__item {
+      font-size: 1.5rem;
+    }
+  }
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+  .inn {
+    &__image {
+      max-height: 300px;
+    }
+    &__image-holder {
+      max-height: 80vh;
+    }
+  }
+  .google-play-img,
+  .app-store-img {
+    max-width: 6rem;
+  }
+  .params-item {
+    &__icon {
+      max-width: 80px;
+      height: 80px;
+    }
+    &__heading {
+      font-size: 1.5rem;
+    }
+    &__text {
+      font-size: 1rem;
+    }
+  }
+  .footer {
+    &__copyrights-text {
+      font-size: 1rem;
+    }
+    &__policy-link {
+      font-size: 1rem;
+    }
+  }
+  .sponsors-item-link {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+  header.header {
+    height: 80px;
+  }
+  .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .calc-window {
+    align-items: center;
+    &__price {
+      position: static;
+    }
+  }
+
+  .calc-form {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    &__fieldset {
+      align-items: center;
+    }
+    &__labels-group {
+      align-items: center;
+    }
+    &__label {
+      padding: 10px 15px;
+      position: relative;
+    }
+    &__label-heading {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      z-index: 2;
+    }
+    &__checkbox-input:checked + &__checkbox {
+      visibility: visible;
+      opacity: 1;
+    }
+    &__checkbox-input:checked + &__checkbox + &__label-heading {
+      color: $black;
+    }
+    &__checkbox {
+      // display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: $green;
+      border: 2px solid $white;
+      border-radius: 8px;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.13s;
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .range {
+    &__min-value,
+    &__max-value {
+      display: none;
+    }
+    input {
+      display: none;
+    }
+  }
+
+  .mobile-range {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    &__minus-btn {
+      @include click();
+    }
+
+    &__value {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+
+      text-align: center;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      color: $white;
+    }
+
+    &__value--green {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 0.5;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      color: $green;
+    }
+
+    &__plus-btn {
+      @include click();
+    }
+  }
+
+  .effective {
+    &__wrapper {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    &__main-content {
+      align-items: center;
+      text-align: center;
+    }
+    &__text-content {
+      align-items: center;
+      text-align: center;
+      ul {
+        padding: 0;
+        list-style-type: none;
+      }
+    }
+    &__mobile-img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      object-position: center;
+      display: inline-block;
+      background-image: url(../assets/img/icons/radial-gradient.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    &__image-holder {
+      display: none;
+    }
+  }
+
+  .inn {
+    &__image-holder {
+      display: none;
+    }
+    &__main-content {
+      align-items: center;
+      text-align: center;
+    }
+    &__text {
+      text-align: center;
+    }
+    &__mobile-links {
+    }
+
+    &__mobile-link {
+    }
+    &__mobile-text {
+      display: inline;
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 33px;
+      /* or 183% */
+
+      text-align: center;
+      letter-spacing: 0.05em;
+
+      color: $white;
+    }
+  }
+
+  .mobile-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    &__link {
+      width: 60px;
+      height: 60px;
+      @include click();
+    }
+  }
+  .app-store-icon {
+    @include icon();
+    background: url(../assets/img/icons/app-store-icon.svg) center no-repeat,
+      url(../assets/img/icons/radial-gradient.png) center no-repeat;
+    background-size: contain, contain;
+  }
+  .google-play-icon {
+    @include icon();
+    background: url(../assets/img/icons/google-play-icon.svg) center no-repeat,
+      url(../assets/img/icons/radial-gradient.png) center no-repeat;
+    background-size: contain, contain;
+  }
+  .params {
+    &__wrapper {
+      text-align: center;
+      align-items: center;
+    }
+    &__params-item {
+      max-width: none;
+    }
+    &__params-list {
+      margin-top: 60px;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+  .design {
+    &__wrapper {
+      align-items: center;
+      text-align: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      gap: 40px;
+    }
+    &__btn {
+      display: none;
+    }
+    &__btn--mobile {
+      display: initial;
+    }
+    &__heading {
+      text-align: center;
+    }
+    &__content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    &__main-content {
+      align-items: center;
+    }
+  }
+  .human {
+    &__wrapper {
+      align-items: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    &__content {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+      gap: 40px;
+    }
+    &__main-content {
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  .menu-window {
+    &__close-btn {
+      position: static;
+      order: 1;
+      background-image: url(../assets/img/icons/close-icon-green.svg);
+    }
+  }
+  .slogan-words {
+    top: 70vh;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    &::after {
+      content: "";
+    }
+  }
 }

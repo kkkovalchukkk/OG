@@ -1,0 +1,177 @@
+.blured-promo {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  .slogan-word {
+    position: absolute;
+    z-index: 999;
+    font-family: "Tenor Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.4375rem;
+    line-height: 4rem;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffffff;
+    &--first {
+      left: 1.375rem;
+      bottom: 9.625rem;
+    }
+  }
+}
+.main-section {
+  position: relative !important;
+  min-width: 100vw;
+  min-height: 100vh;
+  user-select: none;
+  &__background-wrapper {
+  }
+  &__background-blured-wrapper {
+    width: 50vw;
+    overflow: hidden;
+  }
+  &__front-text-wrapper {
+    width: 50%;
+    overflow: hidden;
+  }
+  &__back-text-wrapper {
+    width: 50vw;
+    overflow: hidden;
+    margin-left: auto;
+    right: 0;
+    text-align: left;
+    display: flex;
+    top: 0;
+    right: 0;
+    align-items: center;
+  }
+  & > * > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.875rem;
+  }
+  & > * {
+    min-height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &__background {
+    background-image: url("../assets/img/bg/main-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    z-index: 5;
+  }
+  &__background-blured {
+    left: -3.125rem;
+    top: -3.125rem;
+    min-width: calc(100vw + 6.25rem);
+    min-height: calc(100vh + 6.25rem);
+    background-image: url("../assets/img/bg/main-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    z-index: 15;
+    filter: blur(0.9375rem) brightness(2);
+  }
+  &__front-text {
+    font-family: "Great Vibes";
+    font-size: 6vw;
+    z-index: 20;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-image: url("../assets/img/bg/main-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 280px;
+    line-height: 25rem;
+    letter-spacing: 0.08em;
+
+    color: #ffffff;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    @media (max-width: 1440px) {
+      font-size: 180px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 160px;
+    }
+  }
+  &__back-text {
+    color: #fff;
+    font-size: 6vw;
+    z-index: 10;
+    font-family: "Great Vibes";
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 280px;
+    line-height: 25rem;
+    letter-spacing: 0.08em;
+    -webkit-font-smoothing: antialiased;
+    color: #ffffff;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: always;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: start;
+
+    @media (max-width: 1440px) {
+      font-size: 180px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 160px;
+    }
+  }
+}
+
+.slogan-words {
+  position: absolute;
+  left: 0;
+  top: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+  &__word {
+    font-family: "Tenor Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 1.125;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: $white;
+    @include dash();
+  }
+}
